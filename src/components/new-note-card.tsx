@@ -1,10 +1,11 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { toast } from "sonner";
 
 export function NewNoteCard() {
   const [shouldShowOnBoarding, setShouldShowOnboarding] = useState(true);
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState("");
 
   function handleNewNote() {
     setShouldShowOnboarding(true);
@@ -14,17 +15,19 @@ export function NewNoteCard() {
     setShouldShowOnboarding(false);
   }
 
-  function handleContentChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    setContent(event.target.value)
+  function handleContentChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    setContent(event.target.value);
 
     if (event.target.value == "") {
       setShouldShowOnboarding(true);
     }
   }
 
-  function HandleSaveNote(event: React.FormEvent) {
-    event.preventDefault()
-    console.log(content)
+  function HandleSaveNote(event: FormEvent) {
+    event.preventDefault();
+    console.log(content);
+
+    toast.success("Nota criada com sucesso!");
   }
 
   return (
