@@ -61,6 +61,9 @@ export function App() {
 
   return (
     <div className="mx-auto max-w-6xl my-12 space-y-6 px-5">
+      <h1 className="text-center text-5xl font-bold text-slate-200">
+        <span className="text-lime-500">Voice</span>Notes
+      </h1>
       <img src={logo} alt="Nlw Expert Logo" />
 
       <form className="w-full">
