@@ -1,4 +1,4 @@
-# GitFav
+# Voice Notes
 
 ## Application to create notes using voice
 
